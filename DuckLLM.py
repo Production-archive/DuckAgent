@@ -38,10 +38,12 @@ def initialize_llama_model(model_path=None):
             _llama_model = None
         _llama_model = Llama(
             model_path=model_path,
-            n_gpu_layers=-1,
-            n_ctx=8064,
-            verbose=False,
-        )
+            n_gpu_layers=15,
+            n_ctx=121072,
+            verbose=True,
+            temperature=0.7,
+            top_p=0.9
+        ) 
         print("[*] Model loaded successfully")
         return True
     except Exception as e:
